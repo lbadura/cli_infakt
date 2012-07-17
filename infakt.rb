@@ -27,22 +27,7 @@ class Connection
   end
 end
 
-require 'vcr'
+c = Connection.new
+c.fetch_access_token
 
-VCR.configure do |c|
-  c.cassette_library_dir = 'fixtures/vcr_cassettes'
-  c.hook_into :webmock # or :fakeweb
-end
-
-VCR.use_cassette('user_data') do
-  connection = Connection.new
-  connection.fetch_access_token
-  puts connection.access_token
-
-  response = connection.access_token.get("/api/v2/settings/user_data.json")
-  user_data = JSON.load(response.body)
-  user_data["user_data"].each do |key, value|
-    puts "#{sprintf "%-15s", key}: #{value}"
-  end
-end
-
+puts c.access_token
