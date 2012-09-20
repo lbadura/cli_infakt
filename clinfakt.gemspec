@@ -4,8 +4,8 @@ require File.expand_path('../lib/clinfakt/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Lukasz Badura"]
   gem.email         = ["lukasz@futuresimple.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = "Uber gem for Infakt"
+  gem.summary       = "Really uber uber"
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('aruba')
   gem.add_development_dependency('rake','~> 0.9.2')
   gem.add_dependency('methadone', '~>1.2.1')
-  
+
 
   gem.add_dependency('oauth')
 end
